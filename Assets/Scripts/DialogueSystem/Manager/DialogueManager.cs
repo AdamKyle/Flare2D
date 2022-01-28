@@ -19,7 +19,7 @@ public class DialogueManager : MonoBehaviour
 
     private int currentIndex;
 
-    private bool shouldClearDialogueBox;
+    private bool finishedTalking;
 
     // Allows us to reference this class through doing DialogueManager.dialogueManager.methodName()
     // This makes the class a static singleton.
@@ -31,18 +31,22 @@ public class DialogueManager : MonoBehaviour
 
         dialogueIndexes = new List<int>();
 
-        shouldClearDialogueBox = false;
+        finishedTalking = false;
     }
 
     // Show the dialogue box.
-    public void showDialogue(Dialogue dialogue, bool dialogueIsOpen)
+    public bool showDialogue(Dialogue dialogue, bool dialogueIsOpen)
     {
         dialogueBox.SetActive(true);
 
+        
         if (dialogueIsOpen && !dialogueIndexes.Any()) {
+            
             StartCoroutine(typeText(dialogue.LinesOfText[0]));
 
             dialogueIndexes.Add(0);
+
+            return true;
         } else if (dialogueIsOpen && dialogueIndexes.Any()) {
             currentIndex = dialogueIndexes.Last();
 
@@ -53,23 +57,21 @@ public class DialogueManager : MonoBehaviour
 
                 dialogueIndexes.Add(currentIndex);
 
-                currentIndex += 1;
+                return true;
+            } else {
+                dialogueBox.SetActive(false);
 
-                if (dialogue.LinesOfText.ElementAtOrDefault(currentIndex) == null) {
-                    shouldClearDialogueBox = true;
-                }
-            }
+                dialogueIndexes.Clear();
+
+                return false;
+            }   
         }
+
+        return false;
     }
 
     public bool doneTalking() {
-        return shouldClearDialogueBox;
-    }
-
-    public void cleanUp() {
-        dialogueIndexes.Clear();
-
-        dialogueBox.SetActive(false);
+        return finishedTalking;
     }
 
     // Types out the text letter by letter based on the speed of each letter.

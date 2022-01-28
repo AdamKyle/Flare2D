@@ -82,9 +82,6 @@ public class CharacterMovementController : MonoBehaviour
 
         // Set the respawn point to where the player is when the game launches:
         respawnPoint = transform.position;
-
-        // Set the initial value:
-        coinText.text = "Coins: " + CoinCollection.totalCoins;
     }
 
     // Update is called once per frame
