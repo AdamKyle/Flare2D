@@ -74,7 +74,7 @@ public class CoinCollector : MonoBehaviour, QuestInterface
     }
 
     public void updateUI() {
-        GameObject canvas = GameObject.Find("Coins");
+        GameObject canvas = GameObject.FindWithTag("Coin UI");
 
         Text coinsText = canvas.GetComponent<Text>();
 

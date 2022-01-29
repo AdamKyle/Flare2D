@@ -15,10 +15,11 @@ public class QuestLog : MonoBehaviour
         questLog = this;
 
         if (questLogEntries == null) {
-            questLogEntries = new Dictionary<string, QuestInterface>(); 
+            questLogEntries = new Dictionary<string, QuestInterface>();
         } else {
             foreach (var quest in questLogEntries) {
                 if (!quest.Value.isQuestComplete() && quest.Value.isQuestActive()) {
+                    Debug.Log("Updating Quest UI");
                     quest.Value.updateUI();
                 }
             }

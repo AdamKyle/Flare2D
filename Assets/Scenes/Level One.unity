@@ -6959,6 +6959,10 @@ PrefabInstance:
       propertyPath: m_UiScaleMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2706886650980658875, guid: a99df4b933543c74b8364d7f9d42ebf2, type: 3}
+      propertyPath: m_TagString
+      value: Coin UI
+      objectReference: {fileID: 0}
     - target: {fileID: 2706886650980658877, guid: a99df4b933543c74b8364d7f9d42ebf2, type: 3}
       propertyPath: m_Text
       value: 

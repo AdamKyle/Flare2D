@@ -102,7 +102,7 @@ public class CharacterMovementController : MonoBehaviour
         // Get verticle movement information of up and down, w or s.
         verticle = Input.GetAxis("Vertical");
 
-        if (Input.GetButtonDown("Submit") && canInteract)
+        if (Input.GetKeyDown(KeyCode.Return) && canInteract)
         {
             dialogueIsOpen = true;
             isInteracting = true;

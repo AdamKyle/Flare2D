@@ -10,7 +10,7 @@ public class BaseHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.hideOrShowCoins();
+       this.hideOrShowCoins();
     }
 
     // Update is called once per frame
