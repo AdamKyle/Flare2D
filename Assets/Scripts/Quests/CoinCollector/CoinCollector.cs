@@ -30,7 +30,7 @@ public class CoinCollector : MonoBehaviour, QuestInterface
     {
         CoinCollection.totalCoins = 0;
 
-        GameObject canvas = GameObject.Find("Coins");
+        GameObject canvas = GameObject.FindWithTag("Coin UI");
 
         Text coinsText = canvas.GetComponent<Text>();
 
@@ -54,7 +54,7 @@ public class CoinCollector : MonoBehaviour, QuestInterface
     public void setQuestAsActive() {
         isActive = true;
 
-        GameObject canvas = GameObject.Find("Coins");
+        GameObject canvas = GameObject.FindWithTag("Coin UI");
 
         Text coinsText = canvas.GetComponent<Text>();
 

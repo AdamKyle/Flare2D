@@ -14,6 +14,7 @@ TagManager:
   - Coin
   - Interactable
   - Coin UI
+  - Quest Log UI
   layers:
   - Default
   - TransparentFX

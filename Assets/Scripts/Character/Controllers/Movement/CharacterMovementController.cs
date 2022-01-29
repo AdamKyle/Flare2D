@@ -108,6 +108,14 @@ public class CharacterMovementController : MonoBehaviour
             isInteracting = true;
         }
 
+        if (Input.GetKeyDown(KeyCode.Q)) {
+            QuestLog.questLog.manageQuestLogUi(true);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            QuestLog.questLog.manageQuestLogUi(false);
+        }
+
         if (Mathf.Abs(verticle) > 0f && isLadder) {
             isClimbing = true;
         }
